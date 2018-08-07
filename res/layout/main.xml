@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/body_background"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <include layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEFF0F4"
+        android:scrollbars="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#FFEFF0F4"
+            android:orientation="vertical" >
+
+            <!-- 按钮面板部分 -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="130.0dip"
+                android:layout_margin="10.0dip"
+                android:background="@drawable/panel_bg" >
+
+                <!-- 垂直分隔条 -->
+
+                <View
+                    android:id="@+id/view_one"
+                    android:layout_width="1.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/vertical_separation_line_repeat" >
+                </View>
+
+                <!-- 水平分隔条 -->
+
+                <View
+                    android:id="@+id/view_two"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/horizontal_separation_line_repeat" >
+                </View>
+
+                <!-- ta跟随的人 按钮 -->
+
+                <RelativeLayout
+                    android:id="@+id/friendsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/view_two"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/view_one"
+                    android:background="@drawable/bg_panel_above_left"
+                    android:clickable="true" >
+
+                    <!-- ta跟随的人数 -->
+
+                    <TextView
+                        android:id="@+id/friends_count"
+                        style="@style/normalText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center"
+                        android:text="0" >
+                    </TextView>
+
+                    <!-- ta跟随的人 -->
+
+                    <TextView
+                        android:id="@+id/friends_count_title"
+                        style="@style/normalText.span"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/friends_count"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@string/profile_friends_count_title" >
+                    </TextView>
+                </RelativeLayout>
+
+                <!-- 跟随ta的人 按钮 -->
+
+                <LinearLayout
+                    android:id="@+id/followersLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/view_two"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/view_one"
+                    android:background="@drawable/bg_panel_above_right"
+                    android:clickable="true"
+                    android:orientation="vertical" >
+
+                    <!-- 跟随ta的人数 -->
+
+                    <TextView
+                        android:id="@+id/followers_count"
+                        style="@style/normalText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center"
+                        android:text="0" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/followers_count_title"
+                        style="@style/normalText.span"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/profile_followers_count_title" >
+                    </TextView>
+                </LinearLayout>
+
+                <!--
+                    消息TODO:有bug 同样的布局，却不居中，
+					需要加padding-right,
+					怀疑资源图片中patches有问题
+					还好横屏竖屏都没问题
+                -->
+
+                <LinearLayout
+                    android:id="@+id/statusesLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/view_two"
+                    android:layout_toLeftOf="@id/view_one"
+                    android:background="@drawable/bg_panel_below_left"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:paddingRight="10dp" >
+
+                    <!-- 消息数 -->
+
+                    <TextView
+                        android:id="@+id/statuses_count"
+                        style="@style/normalText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center"
+                        android:text="0" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/statuses_count_title"
+                        style="@style/normalText.span"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/profile_statuses_count_title" >
+                    </TextView>
+                </LinearLayout>
+
+                <!-- 收藏按钮 -->
+
+                <LinearLayout
+                    android:id="@+id/favouritesLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/view_two"
+                    android:layout_toRightOf="@+id/view_one"
+                    android:background="@drawable/bg_panel_below_right"
+                    android:clickable="true"
+                    android:orientation="vertical" >
+
+                    <!-- 收藏数 -->
+
+                    <TextView
+                        android:id="@+id/favourites_count"
+                        style="@style/normalText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10.0dip"
+                        android:gravity="center"
+                        android:text="0" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/favourites_count_title"
+                        style="@style/normalText.span"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:text="@string/profile_favourites_count_title" >
+                    </TextView>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Main content area. -->
+
+    <TextView
+        android:id="@+id/mainListViewTitile"
+        style="@style/ListTitleText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="我的发票类容" />
+
+    <com.diyal.xinvoice.ui.module.MyListView
+        android:id="@+id/tweet_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/dashed_line"
+        android:dividerHeight="1dip"
+        android:fadeScrollbars="false"
+        android:fastScrollEnabled="false" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/maintab_toolbar_bg"
+        android:orientation="horizontal"
+        android:padding="0dp" >
+
+        <Button
+            android:id="@+id/inbox"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/iphone_button_selector"
+            android:scaleType="center"
+            android:text="添加商品"
+            android:textColor="#FFF"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/sendbox"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/iphone_button_selector"
+            android:scaleType="center"
+            android:text="添加客户"
+            android:textColor="#FFF"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/new_message"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/iphone_button_selector"
+            android:scaleType="center"
+            android:text="添加发票"
+            android:textColor="#FFF"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

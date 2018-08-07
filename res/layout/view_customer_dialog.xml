@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="480px"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1082dp"
+            android:orientation="vertical" >
+
+            <!-- 我的客户 -->
+
+            <TextView
+                style="@style/normalText.formHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="12dip"
+                android:text="@string/customer_label_title"
+                android:textSize="@dimen/text_size_13"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="410px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:paddingBottom="10.0dip" >
+
+                <!-- 客户id -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/customer_label_id"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/customer_view_dialog_id"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_language_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+                
+                <!-- 客户名称 -->
+                <LinearLayout
+                    android:id="@+id/software_detail_language_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/customer_label_name"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/customer_view_dialog_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_os_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 客户其它信息 -->
+
+                <LinearLayout
+                    android:id="@+id/software_detail_os_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/customer_label_otherinfo"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/customer_view_dialog_otherinfo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+             </TableLayout>
+            <!-- 商品信息 -->
+            <!-- 合计 -->
+            <!-- 销货单位 -->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

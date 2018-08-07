@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <include layout="@layout/header_writeinvoice" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 购货单位 -->
+
+            <TextView
+                style="@style/normalText.formHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="12dip"
+                android:text="购货单位"
+                android:textSize="@dimen/text_size_13"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:paddingBottom="10.0dip" >
+
+                <!-- 名称 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_name"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_buyunit_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_language_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+                <!-- 纳税人识别号 -->
+
+                <LinearLayout
+                    android:id="@+id/software_detail_language_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_taxpayerno"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_buyunit_taxpayerno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_os_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 地址、电话 -->
+
+                <LinearLayout
+                    android:id="@+id/software_detail_os_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_adressphone"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_buyunit_addphone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 开户行及账号 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_accountnum"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_buyunit_accountnum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+            </TableLayout>
+            <!-- 商品信息 -->
+
+            <TextView
+                style="@style/normalText.formHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="12dip"
+                android:text="商品信息"
+                android:textSize="@dimen/text_size_13"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:paddingBottom="10.0dip" >
+
+                <!-- 名称 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="商品名称:"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_goods_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_language_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+                <!-- 规格型号 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="规格型号:"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_goods_goodsmoden"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 数量、计费单位 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="数量、单位:"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_goods_num"
+                        android:layout_width="120dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8.0dip"
+                        android:gravity="right"
+                        android:maxLength="11"
+                        android:numeric="integer"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13" />
+
+                    <Spinner
+                        android:id="@+id/tv_goods_costunit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 不含税，单价，金额 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8.0dip"
+                            android:text="单价(不含税)、金额(不含税)"
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/et_goods_unitprice"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:maxLength="11"
+                            android:numeric="integer"
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13" />
+
+                        <TextView
+                            android:id="@+id/tv_goods_amount"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:maxLength="11"
+                            android:numeric="integer"
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.0dip"
+                        android:layout_marginRight="2.0dip"
+                        android:layout_marginTop="5.0dip"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/login_line" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8.0dip"
+                            android:text="税率："
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_goods_tax"
+                            android:layout_width="60dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8.0dip"
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8.0dip"
+                            android:text="税额："
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_goods_taxamount"
+                            android:layout_width="120dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8.0dip"
+                            android:textColor="#ff000000"
+                            android:textSize="@dimen/text_size_13"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableLayout>
+            <!-- 合计 -->
+
+            <TextView
+                style="@style/normalText.formHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="12dip"
+                android:text="合计"
+                android:textSize="@dimen/text_size_13"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:paddingBottom="10.0dip" >
+
+                <!-- 金额 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="金额:"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_goods_sumamount"
+                        android:layout_width="80dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <!-- 税额 -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="税额:"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_goods_sumtaxamount"
+                        android:layout_width="80dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="120dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="价税合计(大写):"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_pricetaxsum_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:textColor="#a52a2a"
+                        android:textSize="@dimen/text_size_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="140dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="价税合计(小写):"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_14"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_pricetaxsum_down"
+                        android:layout_width="120dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:textColor="#a52a2a"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </TableLayout>
+            <!-- 销货单位 -->
+
+            <TextView
+                style="@style/normalText.formHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="12dip"
+                android:text="销货单位"
+                android:textSize="@dimen/text_size_13"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:paddingBottom="10.0dip" >
+
+                <!-- 名称 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_name"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_saleunit_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_language_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+                <!-- 纳税人识别号 -->
+
+                <LinearLayout
+                    android:id="@+id/software_detail_language_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_taxpayerno"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_saleunit_taxpayerno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/software_detail_os_iv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 地址、电话 -->
+
+                <LinearLayout
+                    android:id="@+id/software_detail_os_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_adressphone"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_saleunit_addphone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8.0dip"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:layout_marginRight="2.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/login_line" />
+
+                <!-- 开户行及账号 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7.0dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8.0dip"
+                        android:text="@string/invoice_label_accountnum"
+                        android:textColor="#ff000000"
+                        android:textSize="@dimen/text_size_13"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_saleunit_accountnum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_marginTop="5dip"
+                        android:textColor="#ff000000" />
+                </LinearLayout>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

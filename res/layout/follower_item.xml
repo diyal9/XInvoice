@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp" >
+
+    <!-- profile image -->
+
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="2dp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linealayout01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" >
+
+            <!-- user name -->
+
+            <TextView
+                android:id="@+id/user_name"
+                style="@style/LinkText.Bold.Big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!-- user context -->
+
+            <TextView
+                android:id="@+id/user_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textColor="@drawable/tweet_meta_color" />
+        </LinearLayout>
+        <!-- NOTE: 不能使用Button, 否则ListView的点击事件会失效 -->
+
+<!--         <TextView
+            android:id="@+id/follow_btn"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:clickable="true"
+            android:gravity="center"
+            android:textSize="14sp" /> -->
+    </RelativeLayout>
+
+</LinearLayout>
